@@ -1,16 +1,28 @@
-# React + Vite
+# Vivaha (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is configured to deploy automatically to **GitHub Pages**.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+## Build
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm run build
+```
 
-## Expanding the ESLint configuration
+## GitHub Pages setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Push this repository to GitHub (branch: `main`).
+2. In GitHub, open **Settings → Pages**.
+3. Set **Source** to **GitHub Actions**.
+4. Pushes to `main` will trigger `.github/workflows/deploy-gh-pages.yml` and publish the app.
+
+### Notes
+
+- The Vite `base` path is set to `/vivaha/` for production builds.
+- If your repository name is different, update `repoName` in `vite.config.js`.
